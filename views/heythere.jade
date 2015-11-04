@@ -1,8 +1,13 @@
+// a jade conditional, if the name is set then do the following
+// in this case if the name is set then it says hello to the set name
 if name
   h1
     | Hi there, #{name}
 h2
   | Enter your name in the box and hit enter
+// note that method=post matches the app.post in the heythere.js file
 form(method='post')
+  // We set the name of the field here. If we said name='asd', then
+  // within the endpoint we could access it by req.body.asd to get the value.
   input(type='text' name='name')
   button(type='submit') Submit
