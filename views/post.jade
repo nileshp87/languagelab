@@ -1,0 +1,16 @@
+html
+  head
+    title
+      | Make a New Blog Post
+  body
+    h3
+      | Make a New Blog Post
+    form(method='post')
+      | Post Title   
+      input(type='text', name='title')
+      br
+      | Post Content
+      br
+      textarea(name='content', rows='30', cols='100')
+      br
+      button(type='submit') Create Post

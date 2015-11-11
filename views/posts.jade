@@ -1,0 +1,9 @@
+html
+  head
+    title
+      | Most Recent Ten Posts
+  body
+    each post in posts
+      - post = JSON.parse(post)
+      h3=post.title
+      p=post.content
