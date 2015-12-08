@@ -1,3 +1,16 @@
-// A simple, html file that prints hello world inside an h1 tag.
-h1
-  | Hello World
+extends ./layout.jade
+
+block content
+  .jumbotron
+    .container
+      - var featuredPost = JSON.parse(posts.pop())
+      h1= featuredPost.title
+      - var indexWord = featuredPost.content.indexOf(" ", 120)
+      p= featuredPost.content.substring(0, indexWord != -1 ? indexWord : featuredPost.content.length)
+        |...
+      a.btn.btn-primary.btn-lg(href="/posts/" + featuredPost.id) Continue Reading &raquo;
+  .container
+    .row
+      each post in posts
+        .col-md-4
+          +demoPost(post)

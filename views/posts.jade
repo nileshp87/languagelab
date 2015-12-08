@@ -1,9 +1,7 @@
-html
-  head
-    title
-      | Most Recent Ten Posts
-  body
-    each post in posts
-      - post = JSON.parse(post)
-      h3=post.title
-      p=post.content
+extends ./layout.jade
+
+block content
+  each post in posts
+    .row
+      .col-md-8.col-md-offset-2
+        +demoPost(post)
